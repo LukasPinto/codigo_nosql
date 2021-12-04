@@ -8,7 +8,8 @@ const mascotaSchema = new Schema({
         raza: String,
         edad: Number,
         peso: Number,
-    cliente: {type: Schema.Types.ObjectId, ref: 'cliente'}
+        cliente: {type: Schema.Types.ObjectId, ref: 'cliente'},
+        id_historial:{type: Schema.Types.ObjectId, ref : 'historial'}
 });
 
 module.exports = mongoose.model('mascota', mascotaSchema);

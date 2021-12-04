@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+/*modelos*/
 const Task = require('../models/task');
 const Historial = require('../models/historial');
 const Cliente = require('../models/cliente')
 const Mascota = require('../models/mascota');
+const Ficha = require('../models/ficha')
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken')
 const { verify } = require('../middlewares/Auth');
@@ -64,7 +66,7 @@ router.get('/update/cliente', async (req, res) => {
 })
 
 router.get("/Auth", verify, (req, res) => {
-  console.log(req.user)
+  //console.log(req.user)
   res.json(req.user)
 })
 
@@ -93,15 +95,17 @@ router.post('/inicioSesion', async (req, respuesta) => {
 router.post('/add/mascota', verify, async (req, res) => {
   console.log(req.body._id)
   const { _id, nombre_mascota, especie, raza, edad, peso } = req.body;
-  const _id_mascota= new mongoose.Types.ObjectId
+  const _id_mascota = new mongoose.Types.ObjectId
+  const _id_historial = new mongoose.Types.ObjectId
   const mascota = new Mascota({
-    _id:  mongoose.Types.ObjectId(_id_mascota),
+    _id: mongoose.Types.ObjectId(_id_mascota),
     nombre_mascota: nombre_mascota,
     especie: especie,
     raza: raza,
     edad: edad,
     peso: peso,
-    cliente: mongoose.Types.ObjectId(_id)
+    cliente: mongoose.Types.ObjectId(_id),
+    id_historial: _id_historial
   })
   await mascota.save().then(result => {
     if (result) {
@@ -120,10 +124,53 @@ router.post('/add/mascota', verify, async (req, res) => {
       mascota: mongoose.Types.ObjectId(_id_mascota)
     }
   }).then(result => {
-    res.json(result)
+    //console.log(result)
+  })
+  const historial = new Historial({
+    _id: mongoose.Types.ObjectId(_id_historial),
+    observaciones: "",
+    mascota: mongoose.Types.ObjectId(_id_mascota),
+    fichas_consultas: []
+  })
+  await historial.save().then((result) => {
+    res.send(result)
   })
 
 });
 
+router.get('/mascota/:id', verify, async (req, res) => {
+  const id = req.params.id
+  const listado = []
+  const mascotas = await Cliente.findById(mongoose.Types.ObjectId(id))
+  for (id_mascota of mascotas.mascota) {
+    //console.log(id_mascota)
+    await Mascota.findById(mongoose.Types.ObjectId(id_mascota)).then((result => {
+      //console.log(result)
+      listado.push(result)
+    })
+    )
+    //console.log(id)
+  }
+  res.send(listado)
+  //console.log(mascotas)
+})
+
+router.post('/mascota/agendar', verify, async (req, res) => {
+  console.log(req.body)
+  const mascota = await Mascota.findOne({mascota:mongoose.Types.ObjectId(req.body.id_mascota)})
+  console.log(mascota.id_historial)
+ const ficha = new Ficha({
+   _id: new mongoose.Types.ObjectId(),
+    fecha:  Date(`${req.body.fecha}T${req.body.horario}.000+00:00`),
+    diagnostico: "",
+    veterinario: "",
+    id_historial: mongoose.Types.ObjectId(mascota.id_historial)
+  })
+  await ficha.save().then(result=>{
+    res.send(result)
+  })
+
+
+})
 
 module.exports = router;

@@ -16,33 +16,32 @@ const Agendarhora = () => {
     const [horario, setHorario] = useState()
     const [fechaSelect, setFechaSelect] = useState()
     const [actualizar, setActualizar] = useState(true)
-    const [traerDatos,setTraerDatos]= useState(true)
-     useEffect(() => {
-        mascotasService(userState.rut)
-          .then((Response) => {
+    const [traerDatos, setTraerDatos] = useState(true)
+    useEffect(() => {
+        mascotasService(userState._id)
+            .then((Response) => {
+                console.log(Response)
                 setMascotas(Response.data)
                 setActualizar(!actualizar)
             }).
-            catch(()=>{
+            catch(() => {
                 alert("error")
-                
             })
-        
-        },[traerDatos])
+    }, [traerDatos])
 
-    useEffect(() => {
-        for (const mascota of mascotas) {
-            console.log(mascota.id_historial)
-            if (mascota.id_historial === null) {
-                crearHistorialService(mascota.id_mascota).then((Response) => {
-                    console.log(Response)
-                    setTraerDatos(!traerDatos)
-                }).catch(()=>{
-                    alert("error")
-                })
+    /*     useEffect(() => {
+            for (const mascota of mascotas) {
+                console.log(mascota.id_historial)
+                if (mascota.id_historial === null) {
+                    crearHistorialService(mascota.id_mascota).then((Response) => {
+                        console.log(Response)
+                        setTraerDatos(!traerDatos)
+                    }).catch(()=>{
+                        alert("error")
+                    })
+                }
             }
-        }
-    }, [actualizar])
+        }, [actualizar]) */
     const handleChangeHorario = async (e) => {
         await setHorario(e.target.value)
 
@@ -50,23 +49,23 @@ const Agendarhora = () => {
     const handleChangeFecha = async (e) => {
         await setFechaSelect(e)
         await setFecha(JSON.stringify(e).substring(1, 11).replace(/-/g, "/"))
-    
     }
-    const handleSubmit = (e) => {  
+    const handleSubmit = (e) => {
         e.preventDefault();
-            crearFichaService(fecha,mascotaSelect.id_mascota,horario,mascotaSelect.id_historial)
+        crearFichaService(fecha,horario, mascotaSelect.id_historial,mascotaSelect._id)
             .then((Response) => {
-                    if(Response.data.message){
-                        alert("error")
-                    }
-                    else{
-                        alert("Hora reservada")
-                    }   
-                })
-    
-        .catch (()=>{
-            alert("error")
-        })
+                console.log(Response)
+                if (Response.data.message) {
+                    alert("error")
+                }
+                else {
+                    alert("Hora reservada")
+                }
+            })
+
+            .catch(() => {
+                alert("error")
+            })
     }
     const handleSelect = (e) => {
         e.preventDefault();
@@ -76,7 +75,7 @@ const Agendarhora = () => {
         else {
             setMostrar(true)
             for (const mascota of mascotas) {
-                if (mascota.nombre_mascota === e.target.value) { 
+                if (mascota.nombre_mascota === e.target.value) {
                     setMascotaSelect(mascota)
                 }
             }
@@ -102,7 +101,7 @@ const Agendarhora = () => {
                         <Form.Label>Seleccione su mascota</Form.Label>
                         <Form.Select aria-label="Default select example" name="especie" onClick={handleSelect} >
                             <option value="false">Debes seleccionar una mascota</option>
-                            {mascotas.map((key,value) => {
+                            {mascotas.map((key, value) => {
                                 return <option value={key.nombre_mascota} key={value}>{key.nombre_mascota}</option>
                             })
                             }
@@ -110,11 +109,11 @@ const Agendarhora = () => {
                     </Form.Group>
                 </div>
 
-                </Form>
-                {mostrar ? (<><FormularioMascota Submit={handleSubmit} ChangeHorario={handleChangeHorario} ChangeFecha={handleChangeFecha} fecha={fechaSelect} setFecha={setFechaSelect} mascota={mascotaSelect} /></>
-                ) : (<div hidden> </div>)}
-              
-            
+            </Form>
+            {mostrar ? (<><FormularioMascota Submit={handleSubmit} ChangeHorario={handleChangeHorario} ChangeFecha={handleChangeFecha} fecha={fechaSelect} setFecha={setFechaSelect} mascota={mascotaSelect} /></>
+            ) : (<div hidden> </div>)}
+
+
         </div>
     );
 };

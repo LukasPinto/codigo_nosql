@@ -3,6 +3,7 @@ const path = require('path');
 var bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const { JsonWebTokenError } = require('jsonwebtoken');
 // Intializations
 const app = express();
 

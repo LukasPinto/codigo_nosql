@@ -7,7 +7,7 @@ const clienteSchema = new Schema({
     rut:Number,
     correo:String,
     clave:String,
-    mascota: [{type: Schema.Types.ObjectId, ref: 'mascotas',required: true}],
+    mascota: [{type: Schema.Types.ObjectId, ref: 'mascotas'}],
     
     
 });
