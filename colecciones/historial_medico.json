@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "619c4792183dd9deee9aa430"
+  },
+  "observaciones": "NINGUNA",
+  "id_enfermedad": 0,
+  "id_historial": 1,
+  "id_mascota": 1
+},{
+  "_id": {
+    "$oid": "619c4792183dd9deee9aa431"
+  },
+  "observaciones": "NINGUNA",
+  "id_enfermedad": 1,
+  "id_historial": 2,
+  "id_mascota": 2
+},{
+  "_id": {
+    "$oid": "619c4792183dd9deee9aa432"
+  },
+  "observaciones": "NINGUNA",
+  "id_enfermedad": 6,
+  "id_historial": 3,
+  "id_mascota": 3
+},{
+  "_id": {
+    "$oid": "619c4792183dd9deee9aa433"
+  },
+  "observaciones": "NINGUNA",
+  "id_enfermedad": 1,
+  "id_historial": 4,
+  "id_mascota": 4
+},{
+  "_id": {
+    "$oid": "619c4792183dd9deee9aa434"
+  },
+  "observaciones": "NINGUNA",
+  "id_enfermedad": 2,
+  "id_historial": 5,
+  "id_mascota": 5
+},{
+  "_id": {
+    "$oid": "619c4792183dd9deee9aa435"
+  },
+  "observaciones": "NINGUNA",
+  "id_enfermedad": 4,
+  "id_historial": 6,
+  "id_mascota": 6
+},{
+  "_id": {
+    "$oid": "619c4792183dd9deee9aa436"
+  },
+  "observaciones": "NINGUNA",
+  "id_enfermedad": 6,
+  "id_historial": 7,
+  "id_mascota": 7
+},{
+  "_id": {
+    "$oid": "619c4792183dd9deee9aa437"
+  },
+  "observaciones": "NINGUNA",
+  "id_enfermedad": 6,
+  "id_historial": 8,
+  "id_mascota": 8
+},{
+  "_id": {
+    "$oid": "619c4792183dd9deee9aa438"
+  },
+  "observaciones": "NINGUNA",
+  "id_enfermedad": 3,
+  "id_historial": 9,
+  "id_mascota": 9
+},{
+  "_id": {
+    "$oid": "619c4792183dd9deee9aa439"
+  },
+  "observaciones": "NINGUNA",
+  "id_enfermedad": 5,
+  "id_historial": 10,
+  "id_mascota": 10
+}]

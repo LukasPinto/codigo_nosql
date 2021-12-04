@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "618ee682ed777c21a82a9261"
+  },
+  "primernombre": "Felipe",
+  "primerapellido": "Ramirez",
+  "rut": 17800300,
+  "correo": "felipe.ramirez@gmail.com",
+  "clave": "8020e"
+},{
+  "_id": {
+    "$oid": "618eea1790e9250197d0d2ab"
+  },
+  "primernombre": "Fernando",
+  "primerapellido": "Loncon",
+  "rut": 17800301,
+  "correo": "f.l@gmail.com",
+  "clave": "8021e"
+},{
+  "_id": {
+    "$oid": "618eea1790e9250197d0d2ac"
+  },
+  "primernombre": "Genesis",
+  "primerapellido": "Sandoval",
+  "rut": 17800302,
+  "correo": "g.s@gmail.com",
+  "clave": "8022e"
+},{
+  "_id": {
+    "$oid": "618eea1790e9250197d0d2ad"
+  },
+  "primernombre": "Jaime",
+  "primerapellido": "Pavez",
+  "rut": 17800303,
+  "correo": "j.p@gmail.com",
+  "clave": "8023e"
+},{
+  "_id": {
+    "$oid": "618eea1790e9250197d0d2ae"
+  },
+  "primernombre": "Nicole",
+  "primerapellido": "Salazar",
+  "rut": 17800304,
+  "correo": "n.z@gmail.com",
+  "clave": "8024e"
+},{
+  "_id": {
+    "$oid": "618eea1790e9250197d0d2af"
+  },
+  "primernombre": "Elsa",
+  "primerapellido": "Torres",
+  "rut": 17800305,
+  "correo": "e.t@gmail.com",
+  "clave": "8025e"
+},{
+  "_id": {
+    "$oid": "618eea1790e9250197d0d2b0"
+  },
+  "primernombre": "Juan",
+  "primerapellido": "Millan",
+  "rut": 17800306,
+  "correo": "j.m@gmail.com",
+  "clave": "8026e"
+},{
+  "_id": {
+    "$oid": "618eea1790e9250197d0d2b1"
+  },
+  "primernombre": "Sara",
+  "primerapellido": "Palominos",
+  "rut": 17800307,
+  "correo": "s.p@gmail.com",
+  "clave": "8027e"
+},{
+  "_id": {
+    "$oid": "618eea1790e9250197d0d2b2"
+  },
+  "primernombre": "Belen",
+  "primerapellido": "Vidal",
+  "rut": 17800308,
+  "correo": "b.v@gmail.com",
+  "clave": "8028e"
+},{
+  "_id": {
+    "$oid": "618eea1790e9250197d0d2b3"
+  },
+  "primernombre": "William",
+  "primerapellido": "Morelli",
+  "rut": 17800309,
+  "correo": "w.m@gmail.com",
+  "clave": "8029e"
+}]

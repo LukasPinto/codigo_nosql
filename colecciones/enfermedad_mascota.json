@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "618eedf290e9250197d0d2b4"
+  },
+  "id_enfermedad": 0,
+  "enfermedad": "leucemia felina"
+},{
+  "_id": {
+    "$oid": "618eedf290e9250197d0d2b5"
+  },
+  "id_enfermedad": 1,
+  "enfermedad": "otits"
+},{
+  "_id": {
+    "$oid": "618eedf290e9250197d0d2b6"
+  },
+  "id_enfermedad": 2,
+  "enfermedad": "rabia"
+},{
+  "_id": {
+    "$oid": "618eedf290e9250197d0d2b7"
+  },
+  "id_enfermedad": 3,
+  "enfermedad": "linfomas"
+},{
+  "_id": {
+    "$oid": "618eedf290e9250197d0d2b8"
+  },
+  "id_enfermedad": 4,
+  "enfermedad": "hepatitis canina"
+},{
+  "_id": {
+    "$oid": "618eedf290e9250197d0d2b9"
+  },
+  "id_enfermedad": 5,
+  "enfermedad": "nematodos"
+},{
+  "_id": {
+    "$oid": "618eedf290e9250197d0d2ba"
+  },
+  "id_enfermedad": 6,
+  "enfermedad": "Ninguna"
+}]

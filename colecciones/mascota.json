@@ -1,0 +1,111 @@
+[{
+  "_id": {
+    "$oid": "619c47cf183dd9deee9aa441"
+  },
+  "nombre_mascota": "nami",
+  "especie": "gato",
+  "raza": "bengala",
+  "rut_cliente": 17800300,
+  "edad": 1,
+  "peso": 3.5,
+  "id_mascota": 1
+},{
+  "_id": {
+    "$oid": "619c47cf183dd9deee9aa442"
+  },
+  "nombre_mascota": "raya",
+  "especie": "gato",
+  "raza": "gato esfinge",
+  "rut_cliente": 17800301,
+  "edad": 2,
+  "peso": 3,
+  "id_mascota": 2
+},{
+  "_id": {
+    "$oid": "619c47cf183dd9deee9aa443"
+  },
+  "nombre_mascota": "panda",
+  "especie": "gato",
+  "raza": "toyger",
+  "rut_cliente": 17800302,
+  "edad": 1,
+  "peso": 6,
+  "id_mascota": 3
+},{
+  "_id": {
+    "$oid": "619c47cf183dd9deee9aa444"
+  },
+  "nombre_mascota": "dinky",
+  "especie": "perro",
+  "raza": "pastor aleman",
+  "rut_cliente": 17800303,
+  "edad": 2,
+  "peso": 40.3,
+  "id_mascota": 4
+},{
+  "_id": {
+    "$oid": "619c47cf183dd9deee9aa445"
+  },
+  "nombre_mascota": "firulais",
+  "especie": "perro",
+  "raza": "pitbull",
+  "rut_cliente": 17800304,
+  "edad": 2,
+  "peso": 32.9,
+  "id_mascota": 5
+},{
+  "_id": {
+    "$oid": "619c47cf183dd9deee9aa446"
+  },
+  "nombre_mascota": "lulu",
+  "especie": "perro",
+  "raza": "poodle",
+  "rut_cliente": 17800305,
+  "edad": 4,
+  "peso": 4.5,
+  "id_mascota": 6
+},{
+  "_id": {
+    "$oid": "619c47cf183dd9deee9aa447"
+  },
+  "nombre_mascota": "puky",
+  "especie": "perro",
+  "raza": "labrador",
+  "rut_cliente": 17800306,
+  "edad": 1,
+  "peso": 30.5,
+  "id_mascota": 7
+},{
+  "_id": {
+    "$oid": "619c47cf183dd9deee9aa448"
+  },
+  "nombre_mascota": "luffy",
+  "especie": "hamster",
+  "raza": "hamster dorado",
+  "rut_cliente": 17800307,
+  "edad": 4,
+  "peso": 0.4,
+  "id_mascota": 8
+},{
+  "_id": {
+    "$oid": "619c47cf183dd9deee9aa449"
+  },
+  "nombre_mascota": "dongo",
+  "especie": "hamster",
+  "raza": "hamster ruso",
+  "rut_cliente": 17800308,
+  "edad": 7,
+  "peso": 0.5,
+  "id_mascota": 9
+},{
+  "_id": {
+    "$oid": "619c47cf183dd9deee9aa44a"
+  },
+  "nombre_mascota": "spirit",
+  "especie": "caballo",
+  "raza": "caballo arabe",
+  "rut_cliente": 17800309,
+  "edad": 20,
+  "peso": 600,
+  "id_mascota": 10
+}]
