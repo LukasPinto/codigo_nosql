@@ -48,7 +48,8 @@ const Agendarhora = () => {
     }
     const handleChangeFecha = async (e) => {
         await setFechaSelect(e)
-        await setFecha(JSON.stringify(e).substring(1, 11).replace(/-/g, "/"))
+        await setFecha(JSON.stringify(e).substring(1, 11).replace(/\//g, "-"))
+        console.log(e)
     }
     const handleSubmit = (e) => {
         e.preventDefault();

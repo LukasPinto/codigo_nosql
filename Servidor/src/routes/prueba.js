@@ -10,6 +10,7 @@ const Ficha = require('../models/ficha')
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken')
 const { verify } = require('../middlewares/Auth');
+const { findOneAndUpdate } = require('../models/task');
 /* Pagina principal */
 router.get('/', async (req, res) => {
   const tasks = await Task.find();
@@ -157,20 +158,26 @@ router.get('/mascota/:id', verify, async (req, res) => {
 
 router.post('/mascota/agendar', verify, async (req, res) => {
   console.log(req.body)
-  const mascota = await Mascota.findOne({mascota:mongoose.Types.ObjectId(req.body.id_mascota)})
+  const mascota = await Mascota.findOne({ mascota: mongoose.Types.ObjectId(req.body.id_mascota) })
+  const id_ficha = new mongoose.Types.ObjectId()
   console.log(mascota.id_historial)
- const ficha = new Ficha({
-   _id: new mongoose.Types.ObjectId(),
-    fecha:  Date(`${req.body.fecha}T${req.body.horario}.000+00:00`),
+  const ficha = new Ficha({
+    _id: mongoose.Types.ObjectId(id_ficha),
+    fecha: new Date(`${req.body.fecha}T${req.body.horario}.000+00:00`),
     diagnostico: "",
     veterinario: "",
     id_historial: mongoose.Types.ObjectId(mascota.id_historial)
   })
-  await ficha.save().then(result=>{
-    res.send(result)
+  await Historial.findOneAndUpdate({
+    _id: mongoose.Types.ObjectId(mascota.id_historial)
+  }, {
+    $push: {
+      fichas_consultas: mongoose.Types.ObjectId(id_ficha)
+    }
   })
-
-
+await ficha.save().then(result => {
+  res.send(result)
+})
 })
 
 module.exports = router;
